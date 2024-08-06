@@ -23,3 +23,12 @@ In order to determine which sets of scans are suitable for training, this projec
 
 The functions 'determine_diagnosis' and 'determine_diagnosis_year' will add columns to a dataframe representing whether a patient was diagnosed with lung cancer and the time until a positive diagnosis or time until last negative diagnosis, respectively.
 
+### Running Sybil Evaluation
+
+The function 'run_sybil_evatuation_on_dataframe' will run Sybil on every entry in a dataframe and return risk scores for every entry, the AUC, and the C-index. By default, Sybil uses an ensemble of 5 models. To run a particular Sybil model on a dataframe, use the function 'run_specific_sybil_eval_on_dataset.'
+
+### Sybil Feature Extraction
+
+The function 'extract_ct_image_feature' takes in a dataframe that includes a column named 'Directory' that specifies the directory to a set of dicom files and uses Sybil to perform imaging feature extraction on every entry in the dataframe.
+
+## Sybil ML Training
