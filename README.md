@@ -11,10 +11,10 @@ In order to determine which sets of scans are suitable for training, this projec
 
 ```
   ├── <AccessionNumber>                   
-  │   ├── <scan_id1>
+  │   ├── <scan_folder1>
   |   |  |── <dicom_file1>
   |   |  |── <...>
-  │   ├── <scan_id2>   
+  │   ├── <scan_folder2>   
   │   ├── <...>    
 ```
 
