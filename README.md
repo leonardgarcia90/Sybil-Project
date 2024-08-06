@@ -5,7 +5,19 @@ This project includes two files: 'Sybil_Project.ipynb' and 'Sybil ML Training.ip
 
 ## Sybil_Project
 ### Extracting Metadata from Dicom Files
+
+In order to determine which sets of scans are suitable for training, this project includes functions to extract metadata from dicom files. The function 'get_first_file_in_every_folder' creates a list of directories for the first file in every terminal folder in a nested directory. Assuming scans are organised in a manner similar to the following:
+
   ├── <AccessionNumber>                   
-  │   ├── <slide_id1.svs>  
-  │   ├── <slide_id2.svs>   
+  │   ├── <scan_id1>
+  |   |  |── <dicom_file1>
+  |   |  |── <...>
+  │   ├── <scan_id2>   
   │   ├── <...>    
+
+'get_first_file_in_every_folder' will return a list containing the directories for one dicom file for every scan. With this list of directories, the function 'make_dicom_metadata_df' will create a dataframe containing metadata from each dicom file.
+
+### Determining Necessary Values for Sybil Training
+
+The functions 'determine_diagnosis' and 'determine_diagnosis_year' will add columns to a dataframe representing whether a patient was diagnosed with lung cancer and the time until a positive diagnosis or time until last negative diagnosis, respectively.
+
